@@ -1,0 +1,50 @@
+<%- include ('partials/top') %>
+  <div class="row space">
+    <div class="col-12 d-flex justify-content-between align-items-center underline pb-2">
+      <h3 class="title text-white">Police Stations</h3>
+      <div>
+        <a href="/stations/new" class="btn btn-success">Add Police Station</a>
+      </div>
+    </div> 
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h4 class="font-weight-light text-center text-white bg-primary p-2 m-0 table-top">List of Police Station</h4>
+      <table class="table table-bordered table-striped text-white">
+        <thead class="font-weight-bold">
+          <tr>
+            <td>Station Name</td>
+            <td>Location</td>
+            <td>City</td>
+            <td>Office Phone</td>
+            <td>Station Head</td>
+            <td>Remarks</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <% stations.forEach((m) => { %>
+            <tr>
+              <td><%= m.station_name %></td>
+              <td><%= m.location %></td>
+              <td><%= m.city %></td>
+              <td><%= m.phone %></td>
+              <td><%= m.station_head %></td>
+              <td><%= m.remarks %></td>
+              <td>
+                <a href='<%= "/stations/remove/" + m._id %>' class="btn btn-sm btn-danger">Remove</a>
+              </td>
+            </tr>
+          <% }) %>          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</div>
+
+</div>
+  
+
+<%- include ('partials/bottom') %>
